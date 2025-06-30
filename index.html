@@ -4,66 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="main.css" rel="stylesheet"> 
-    <title>MIN JUN</title>
-    
+    <title>Trần Minh Trung</title>
 </head>
 <body>
-    <header>
-        <h1>Trần Minh Trung</h1>
-        <h1>Min Jun(Nại Hà)</h1>
-        <p>Lập trình viên | Nhà thiết kế | Người đam mê công nghệ</p>
+    <header class="header">
+        <h1 class="header-title">Trần Minh Trung (Home)</h1>
+        <p class="header-subtitle">Lập trình viên | Nhà thiết kế | Người đam mê công nghệ</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">Giới Thiệu</a></li>
-            <li><a href="#skills">Kỹ Năng</a></li>
-            <li><a href="#projects">Dự Án</a></li>
-            <li><a href="#contact">Liên Hệ</a></li>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#about" class="nav-link">Giới Thiệu (About Me)</a></li>
+            <li><a href="#skills" class="nav-link">Kỹ Năng (Skills)</a></li>
+            <li><a href="#projects" class="nav-link">Dự Án (Projects)</a></li>
+            <li><a href="#contact" class="nav-link">Liên Hệ (Contact)</a></li>
         </ul>
     </nav>
 
-    <section id="about">
-        <h2>Giới Thiệu</h2>
-        <p>Xin chào! Tôi là Trần Minh Trung, một lập trình viên đam mê tạo ra các giải pháp công nghệ sáng tạo. Tôi luôn tìm kiếm cơ hội để học hỏi và phát triển.</p>
+    <section id="about" class="section about">
+        <h2 class="section-title">Giới Thiệu</h2>
+        <p class="section-content">Xin chào! Tôi là Trần Minh Trung, một lập trình viên đam mê tạo ra các giải pháp công nghệ sáng tạo. Với hơn 3 năm kinh nghiệm trong lĩnh vực phát triển web và thiết kế giao diện, tôi luôn tìm kiếm cơ hội để học hỏi và phát triển. Tôi yêu thích việc xây dựng các ứng dụng thân thiện với người dùng và tối ưu hóa hiệu suất. Hãy cùng khám phá hành trình của tôi qua các dự án và kỹ năng dưới đây!</p>
     </section>
 
-    <section id="skills">
-        <h2>Kỹ Năng</h2>
+    <section id="skills" class="section skills">
+        <h2 class="section-title">Kỹ Năng</h2>
         <div class="skills-grid">
-            <div class="skill">HTML & CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">React</div>
-            <div class="skill">Node.js</div>
+            <div class="skill">
+                <h3 class="skill-title">HTML & CSS</h3>
+                <p class="skill-desc">Thiết kế giao diện đẹp mắt và responsive.</p>
+            </div>
+            <div class="skill">
+                <h3 class="skill-title">JavaScript</h3>
+                <p class="skill-desc">Xây dựng tương tác động thời gian thực.</p>
+            </div>
+            <div class="skill">
+                <h3 class="skill-title">React</h3>
+                <p class="skill-desc">Phát triển ứng dụng web hiện đại.</p>
+            </div>
+            <div class="skill">
+                <h3 class="skill-title">Node.js</h3>
+                <p class="skill-desc">Xử lý backend mạnh mẽ và hiệu quả.</p>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Dự Án</h2>
+    <section id="projects" class="section projects">
+        <h2 class="section-title">Dự Án</h2>
         <div class="projects-grid">
             <div class="project">
-                <h3>Dự Án 1</h3>
-                <p>Mô tả ngắn về dự án 1, sử dụng HTML, CSS và JavaScript.</p>
+                <h3 class="project-title">Dự Án 1</h3>
+                <p class="project-desc">Một trang web portfolio cá nhân, được xây dựng với HTML, CSS và JavaScript. <a href="#" class="project-link">Xem trên GitHub</a>.</p>
             </div>
             <div class="project">
-                <h3>Dự Án 2</h3>
-                <p>Mô tả ngắn về dự án 2, ứng dụng web với React.</p>
+                <h3 class="project-title">Dự Án 2</h3>
+                <p class="project-desc">Ứng dụng quản lý công việc với React, tích hợp API thực tế. <a href="#" class="project-link">Xem trên GitHub</a>.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Liên Hệ</h2>
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Liên Hệ</h2>
         <div class="contact-form">
-            <input type="text" placeholder="Họ và tên" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Tin nhắn" rows="5" required></textarea>
-            <button>Gửi</button>
+            <form class="form">
+                <input type="text" placeholder="Họ và tên" required class="form-input">
+                <input type="email" placeholder="Email" required class="form-input">
+                <textarea placeholder="Tin nhắn" rows="5" required class="form-input form-textarea"></textarea>
+                <button type="submit" class="form-button">Gửi</button>
+            </form>
         </div>
+        <p class="contact-info">Kết nối với tôi qua: <a href="#" class="contact-link">GitHub</a>, <a href="#" class="contact-link">LinkedIn</a>.</p>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Trần Minh Trung. All rights reserved.</p>
+    <footer class="footer">
+        <p class="footer-text">© 2025 Trần Minh Trung. All rights reserved.</p>
     </footer>
 </body>
 </html>
