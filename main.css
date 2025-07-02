@@ -1,9 +1,9 @@
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4fc79);
-    color: #08ccea;
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #a2e2b3;
+    border: 3px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     display: block;
