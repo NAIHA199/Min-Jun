@@ -7,6 +7,8 @@
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
+     
+
     <img src="z6779956646980_9a8df876674dfc5d933da20241889e16.jpg" alt="Ảnh đại diện" class="avatar">
     <header class="header">
         <h1 class="header-title">Trần Minh Trung<h1>
@@ -24,7 +26,7 @@
     </nav>
 
     <section id="about" class="section about">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">👋 About Me</h2>
         <div class="about-grid">
             <div class="about-item">
                 <h3 class="about-title">Introduction</h3>
@@ -46,29 +48,30 @@
     </section>
 
     <section id="skills" class="section skills">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">🛠️ Skills</h2>
         <div class="skills-grid">
             <div class="skill">
                 <h3 class="skill-title">HTML & CSS</h3>
-                <p class="skill-desc">...</p>
+                <p class="skill-desc">Giao diện web đẹp và responsive</p>
             </div>
             <div class="skill">
                 <h3 class="skill-title">JavaScript</h3>
-                <p class="skill-desc">...</p>
+                <p class="skill-desc">Ứng dụng desktop và OOP</p>
             </div>
             <div class="skill">
-                <h3 class="skill-title">...</h3>
-                <p class="skill-desc">...</p>
+                <h3 class="skill-title">C++</h3>
+                <p class="skill-desc">Giải thuật & xử lý dữ liệu mạnh</p>
             </div>
             <div class="skill">
-                <h3 class="skill-title">...</h3>
-                <p class="skill-desc">...</p>
+                <h3 class="skill-title">Python</h3>
+                <p class="skill-desc">Tự động hóa và phân tích dữ liệu</p>
             </div>
         </div>
     </section>
+    
 
     <section id="projects" class="section projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">📂 Projects</h2>
         <div class="projects-grid">
             <div class="project">
                 <h3 class="project-title">Dự Án 1</h3>
@@ -82,7 +85,7 @@
     </section>
 
     <section id="contact" class="section contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">📬 Contact</h2>
         <div class="contact-form">
             <form class="form">
                 <input type="text" placeholder="Họ và tên" required class="form-input">
@@ -97,5 +100,299 @@
     <footer class="footer">
         <p class="footer-text">© 2025 Trần Minh Trung. All rights reserved.</p>
     </footer>
+    
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4fc79);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    display: block;
+}
+
+.header {
+    background-color: #2a6eb8;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+
+.header-date {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+}
+
+.nav {
+    background-color: #1f2937;
+    padding: 1rem;
+    width: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: #93c5fd;
+}
+
+.section {
+    max-width: 64rem;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .about-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.about-item {
+    background-color: #bfdbfe;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.about-item:hover {
+    background-color: #93c5fd;
+}
+
+.about-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.about-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #64748b;
+}
+
+.skills {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.skill {
+    background-color: #bfdbfe;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.skill:hover {
+    background-color: #93c5fd;
+}
+
+.skill-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.skill-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #64748b;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.project {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.project:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2a6eb8;
+    margin-bottom: 0.5rem;
+}
+
+.project-desc {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.project-link {
+    color: #2a6eb8;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-button {
+    padding: 0.75rem;
+    background-color: #2a6eb8;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-button:hover {
+    background-color: #1e4a8a;
+}
+
+.contact-info {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.contact-link {
+    color: #2a6eb8;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+  </style>
 </body>
 </html>
