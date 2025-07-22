@@ -1,398 +1,307 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trần Minh Trung</title>
-    <link href="main.css" rel="stylesheet">
-</head>
-<body>
-     
-
-    <img src="z6779956646980_9a8df876674dfc5d933da20241889e16.jpg" alt="Ảnh đại diện" class="avatar">
-    <header class="header">
-        <h1 class="header-title">Trần Minh Trung<h1>
-        <p class="header-subtitle">Lập trình viên | Nhà thiết kế | Người đam mê công nghệ</p>
-        <p id="date-time" class="header-date"></p>
-    </header>
-
-    <nav class="nav">
-        <ul class="nav-list">
-            <li><a href="#about" class="nav-link"> About Me</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="about" class="section about">
-        <h2 class="section-title">👋 About Me</h2>
-        <div class="about-grid">
-            <div class="about-item">
-                <h3 class="about-title">Introduction</h3>
-                <p class="about-desc">Tran Minh Trung, a programmer passionate about creating technological solutions.</p>
-            </div>
-            <div class="about-item">
-                <h3 class="about-title">Hobbies</h3>
-                <p class="about-desc">Sports, Tourism, Technology</p>
-            </div>
-            <div class="about-item">
-                <h3 class="about-title">Passion</h3>
-                <p class="about-desc">Build user-friendly applications and optimize performance.</p>
-            </div>
-            <div class="about-item">
-                <h3 class="about-title">Objective</h3>
-                <p class="about-desc">Learning and continuous development in the field of technology.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section skills">
-        <h2 class="section-title">🛠️ Skills</h2>
-        <div class="skills-grid">
-            <div class="skill">
-                <h3 class="skill-title">HTML & CSS</h3>
-                <p class="skill-desc">Giao diện web đẹp và responsive</p>
-            </div>
-            <div class="skill">
-                <h3 class="skill-title">JavaScript</h3>
-                <p class="skill-desc">Ứng dụng desktop và OOP</p>
-            </div>
-            <div class="skill">
-                <h3 class="skill-title">C++</h3>
-                <p class="skill-desc">Giải thuật & xử lý dữ liệu mạnh</p>
-            </div>
-            <div class="skill">
-                <h3 class="skill-title">Python</h3>
-                <p class="skill-desc">Tự động hóa và phân tích dữ liệu</p>
-            </div>
-        </div>
-    </section>
-    
-
-    <section id="projects" class="section projects">
-        <h2 class="section-title">📂 Projects</h2>
-        <div class="projects-grid">
-            <div class="project">
-                <h3 class="project-title">Dự Án 1</h3>
-                <p class="project-desc">Một trang web portfolio cá nhân, được xây dựng với HTML, CSS và JavaScript. <a href="https://github.com/NAIHA199" class="project-link">Xem trên GitHub</a>.</p>
-            </div>
-            <div class="project">
-                <h3 class="project-title">Dự Án 2</h3>
-                <p class="project-desc">Ứng dụng quản lý khách sạn <a href="https://github.com/NAIHA199" class="project-link">Xem trên GitHub</a>.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact">
-        <h2 class="section-title">📬 Contact</h2>
-        <div class="contact-form">
-            <form class="form">
-                <input type="text" placeholder="Họ và tên" required class="form-input">
-                <input type="email" placeholder="Email" required class="form-input">
-                <textarea placeholder="Tin nhắn" rows="5" required class="form-input form-textarea"></textarea>
-                <button type="submit" class="form-button">Gửi</button>
-            </form>
-        </div>
-        <p class="contact-info">Kết nối với tôi qua: <a href="https://github.com/NAIHA199" class="contact-link">GitHub</a>, <a href="#" class="contact-link">LinkedIn</a>.</p>
-    </section>
-
-    <footer class="footer">
-        <p class="footer-text">© 2025 Trần Minh Trung. All rights reserved.</p>
-    </footer>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trần Minh Trung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4fc79);
-    color: #333;
+    :root {
+      --bg-light: #f5f5f5;
+      --bg-dark: #1e1e1e;
+      --text-light: #333;
+      --text-dark: #f1f1f1;
+      --accent: #007BFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      height: 100vh;
+      transition: background 0.3s, color 0.3s;
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+    body.light {
+    background-image: url(back.light.jpg);
+    color: #333; 
+    }
+    body.dark {
+    background-image: url(back.dark.jpg);
+    color: #f1f1f1;
+    }
+    body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;color: #333;  
+    }
+    
+
+    .layout-container {
+      display: flex;
+      width: 100%;
+    }
+
+    /* LEFT - PROFILE */
+    .left-panel {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .profile-card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 280px;
+      transition: background 0.3s;
+    }
+
+    body.dark .profile-card {
+      background: #2f2f2f;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .profile-card h2 {
+      margin: 10px 0 5px;
+    }
+
+    .profile-card p {
+      font-size: 0.95rem;
+      color: gray;
+    }
+    /* Card chung */
+    .card-slider,
+    .profile-card {
+    background-color: rgba(255, 255, 255, 0.15); /* nền sáng trong suốt */
+    backdrop-filter: blur(10px); /* làm mờ background phía sau */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    }
+    body.dark .card-slider,
+    body.dark .profile-card {
+    background-color: rgba(0, 0, 0, 0.2); /* nền tối trong suốt */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
+    /* MIDDLE - MENU */
+    .middle-menu {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px; /* Bo góc đẹp */
+    padding: 20px 10px;
+    width: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-    display: block;
-}
-
-.header {
-    background-color: #2a6eb8;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    width: 100%;
-}
-
-.header-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-.header-subtitle {
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin: 0.5rem 0;
-}
-
-.header-date {
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 0.5rem 0;
-}
-
-.nav {
-    background-color: #1f2937;
-    padding: 1rem;
-    width: 100%;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-
-.nav-link:hover {
-    color: #93c5fd;
-}
-
-.section {
-    max-width: 64rem;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-.section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.about {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    padding: 2rem;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .about-grid {
-        grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-}
 
-.about-item {
-    background-color: #bfdbfe;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    transition: background-color 0.3s;
-}
 
-.about-item:hover {
-    background-color: #93c5fd;
-}
-
-.about-title {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.about-desc {
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: #64748b;
-}
-
-.skills {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    padding: 2rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex-grow: 1;
+      justify-content: center;
     }
-}
 
-.skill {
-    background-color: #bfdbfe;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.skill:hover {
-    background-color: #93c5fd;
-}
-
-.skill-title {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.skill-desc {
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: #64748b;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .tab-btn {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      padding: 5px 3px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: inherit;
+      position: relative;
     }
-}
 
-.project {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-}
+    .tab-btn.active {
+      background: rgba(0, 123, 255, 0.1);
+      box-shadow: inset 2px 0 5px rgba(0,0,0,0.1);
+      font-weight: bold;
+      border-radius: 5px;
+    }
 
-.project:hover {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-}
+    /* Toggle */
+    .theme-toggle {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      flex-direction: column;
+    }
 
-.project-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2a6eb8;
-    margin-bottom: 0.5rem;
-}
+    .theme-switch {
+      width: 40px;
+      height: 20px;
+      background: #999;
+      border-radius: 10px;
+      position: relative;
+      transition: background 0.3s;
+    }
 
-.project-desc {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #475569;
-}
+    .theme-switch::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      top: 1px;
+      left: 1px;
+      transition: transform 0.3s;
+    }
 
-.project-link {
-    color: #2a6eb8;
-    text-decoration: none;
-    font-weight: 400;
-}
+    body.dark .theme-switch {
+      background: #555;
+    }
 
-.project-link:hover {
-    text-decoration: underline;
-}
+    body.dark .theme-switch::after {
+      transform: translateX(20px);
+    }
 
-.contact {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    padding: 2rem;
-}
+    /* RIGHT - CONTENT */
+    .right-content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    body.dark .right-content {
+    background-color: rgba(0, 0, 0, 0.15);
+    }
+    .card-slider {
+      display: none;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+    }
 
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    .card-slider.active {
+      display: block;
+    }
 
-.form-input {
-    padding: 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.form-textarea {
-    resize: vertical;
-}
-
-.form-button {
-    padding: 0.75rem;
-    background-color: #2a6eb8;
-    color: white;
-    border: none;
-    border-radius: 0.375rem;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.form-button:hover {
-    background-color: #1e4a8a;
-}
-
-.contact-info {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #475569;
-}
-
-.contact-link {
-    color: #2a6eb8;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.contact-link:hover {
-    text-decoration: underline;
-}
-
-.footer {
-    background-color: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    width: 100%;
-}
-
-.footer-text {
-    margin: 0;
-    font-size: 0.875rem;
-    font-weight: 300;
-}
+    body.dark .card-slider {
+      background: #2a2a2a;
+    }
   </style>
+</head>
+<body class="light">
+  <div class="layout-container">
+    
+    <!-- LEFT -->
+    <aside class="left-panel">
+      <div class="profile-card">
+        <img src="profile.jpg" class="avatar" alt="Avatar">
+        <h2>Trần Minh Trung</h2>
+        <p>Lập trình viên | Designer</p>
+      </div>
+    </aside>
+
+    <!-- MIDDLE MENU -->
+    <nav class="middle-menu">
+      <div class="menu-buttons">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="skills">Skills</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </div>
+      <div class="theme-toggle" id="toggle-theme">
+        <span id="theme-icon">🌞</span>
+        <div class="theme-switch"></div>
+      </div>
+    </nav>
+
+    <!-- RIGHT CONTENT -->
+    <main class="right-content">
+      <section class="card-slider active" id="about">
+        <h2>👋 About Me</h2>
+        <p>Tôi là Trung, một người yêu thích công nghệ và đam mê lập trình.</p>
+      </section>
+
+      <section class="card-slider" id="skills">
+        <h2>🛠️ Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>C++, Python</li>
+          <li>Thiết kế giao diện</li>
+        </ul>
+      </section>
+
+      <section class="card-slider" id="projects">
+        <h2>📂 Projects</h2>
+        <p>Các dự án cá nhân như portfolio, game trí nhớ, quản lý khách sạn,...</p>
+      </section>
+
+      <section class="card-slider" id="contact">
+        <h2>📬 Contact</h2>
+        <p>Liên hệ qua GitHub: <a href="https://github.com/NAIHA199" target="_blank">NAIHA199</a></p>
+      </section>
+    </main>
+  </div>
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.card-slider');
+    const themeToggle = document.getElementById('toggle-theme');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Toggle dark mode + đổi icon
+    themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    themeIcon.textContent = isDark ? '🌙' : '🌞';
+    });
+
+    // Tab chuyển nội dung
+    buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+    });
+</script>
 </body>
 </html>
