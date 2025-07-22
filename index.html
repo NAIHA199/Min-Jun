@@ -107,6 +107,50 @@
     background-color: rgba(0, 0, 0, 0.2); /* nền tối trong suốt */
     border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    /* Tăng kích thước card */
+    .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    width: 100%;
+    }
+
+    .card-item {
+    width: 100%;
+    max-width: 260px;
+    height: 220px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    justify-content: center;
+    }
+
+    .card-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    }
+
+
+    .card-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: inherit;
+    }
+
+    body.dark .card-item img {
+    filter: brightness(0.9) contrast(1.1);
+    }
+
 
 
     /* MIDDLE - MENU */
@@ -198,83 +242,179 @@
 
     /* RIGHT - CONTENT */
     .right-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* căn giữa ngang */
-    justify-content: center; /* căn giữa dọc */
-    padding: 40px;
-    overflow-y: auto;
-    background-color: rgba(255, 255, 255, 0.15); /* nền trong suốt */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 40px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
-    }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow: hidden; /* ✅ không scroll */
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  margin: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
     body.dark .right-content {
     background-color: rgba(0, 0, 0, 0.15);
     }
     .card-slider {
-      display: none;
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s ease;
+    display: none;
+    width: 100%;
+    padding: 0; /* vì .card-box đã có padding rồi */
+    background: transparent; /* ✅ bỏ nền */
+    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
     }
+.section-title-box {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 30px auto 35px auto; /* ⬅ Top: 30px, Bottom: 35px */
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: var(--text-light);
+  width: fit-content;
+}
+
+
+body.dark .section-title-box {
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-dark);
+}
+
 
     .card-slider.active {
-      display: block;
+    display: block;
     }
 
     body.dark .card-slider {
-      background: #2a2a2a;
+    background: rgba(0,0,0,0.15);
     }
     /* CONTACT - CONTENT */
     form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    }
+
+    form input,
+    form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+    }
+
+    body.dark form input,
+    body.dark form textarea {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #666;
+    color: #f1f1f1;
+    }
+
+    form button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    }
+
+    form button:hover {
+    background-color: #0056b3;
+    }
+
+    #form-status {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    }
+    /*Card-slider*/
+    
+    .section-title {
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+    .card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+.card-box {
+  padding: 30px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
-form input,
-form textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  outline: none;
+body.dark .card-box {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark form input,
-body.dark form textarea {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid #666;
-  color: #f1f1f1;
-}
 
-form button {
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+    .card-item {
+        width: 100%;
+        max-width: 280px;
+        height: 230px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(6px);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+        justify-content: center;
+        }
+        .card-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    }
+        .card-item:hover {
+    transform: translateY(-5px);
+    }
 
-form button:hover {
-  background-color: #0056b3;
-}
+    body.dark .card-item {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #f1f1f1;
+    }
 
-#form-status {
-  font-size: 0.9rem;
-  margin-top: 5px;
+    /* Responsive */
+    @media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    @media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
   </style>
@@ -307,45 +447,97 @@ form button:hover {
     </nav>
 
     <!-- RIGHT CONTENT -->
-    <main class="right-content">
-      <section class="card-slider active" id="about">
-        <h2>👋 About Me</h2>
-        <p>Tôi là Trung, một người yêu thích công nghệ và đam mê lập trình.</p>
-      </section>
+    <!-- RIGHT CONTENT -->
+<main class="right-content">
+  <!-- ABOUT -->
+  <section class="card-slider active" id="about">
+    <h2 class="section-title-box">👋 About Me</h2>
+    <div class="card-grid">
+      <div class="card-item">
+        <img src="img/tech.png" alt="Công nghệ" />
+        <p>Tôi yêu thích công nghệ 💻</p>
+      </div>
+      <div class="card-item">
+        <img src="img/framework.png" alt="Framework" />
+        <p>Khám phá framework mới 🚀</p>
+      </div>
+      <div class="card-item">
+        <img src="img/uiux.png" alt="UIUX" />
+        <p>Đam mê UI/UX 🎨</p>
+      </div>
+      <div class="card-item">
+        <img src="img/learning.png" alt="Học hỏi" />
+        <p>Luôn học hỏi 📚</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="card-slider" id="skills">
-        <h2>🛠️ Skills</h2>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>C++, Python</li>
-          <li>Thiết kế giao diện</li>
-        </ul>
-      </section>
+  <!-- SKILLS -->
+  <section class="card-slider" id="skills">
+    <h2 class="section-title-box">🛠️ Skills</h2>
+    <div class="card-grid">
+      <div class="card-item">
+        <img src="img/html.png" alt="HTML/CSS" />
+        <p>HTML/CSS</p>
+      </div>
+      <div class="card-item">
+        <img src="img/js.png" alt="JavaScript" />
+        <p>JavaScript</p>
+      </div>
+      <div class="card-item">
+        <img src="img/react.png" alt="React/Vue" />
+        <p>React/Vue</p>
+      </div>
+      <div class="card-item">
+        <img src="img/design.png" alt="UI Design" />
+        <p>Thiết kế UI</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="card-slider" id="projects">
-        <h2>📂 Projects</h2>
-        <p>Các dự án cá nhân như portfolio, game trí nhớ, quản lý khách sạn,...</p>
-      </section>
+  <!-- PROJECTS -->
+  <section class="card-slider" id="projects">
+    <h2 class="section-title-box">📂 Projects</h2>
+    <div class="card-grid">
+      <div class="card-item">
+        <img src="img/portfolio.png" alt="Portfolio" />
+        <p>Portfolio</p>
+      </div>
+      <div class="card-item">
+        <img src="img/memory.png" alt="Game trí nhớ" />
+        <p>Game trí nhớ</p>
+      </div>
+      <div class="card-item">
+        <img src="img/hotel.png" alt="Quản lý khách sạn" />
+        <p>Quản lý khách sạn</p>
+      </div>
+      <div class="card-item">
+        <img src="img/blog.png" alt="Blog" />
+        <p>Blog cá nhân</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="card-slider" id="contact">
-        <h2>📬 Contact</h2>
-        <form id="contactForm">
-            <label for="name">Tên của bạn:</label>
-            <input type="text" id="name" name="name" required placeholder="Nhập tên của bạn">
+  <!-- CONTACT -->
+  <section class="card-slider" id="contact">
+    <h2 class="section-title-box">📬 Contact</h2>
+    <form id="contactForm">
+      <label for="name">Tên của bạn:</label>
+      <input type="text" id="name" name="name" required placeholder="Nhập tên của bạn">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="email@domain.com">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="email@domain.com">
 
-            <label for="message">Tin nhắn:</label>
-            <textarea id="message" name="message" required placeholder="Viết tin nhắn..."></textarea>
+      <label for="message">Tin nhắn:</label>
+      <textarea id="message" name="message" required placeholder="Viết tin nhắn..."></textarea>
 
-            <button type="submit">Gửi liên hệ</button>
-            <p id="form-status"></p>
-        </form>
-        <p>Hoặc liên hệ qua Email: <a href="#" target="_blank">trungtran2005199@gmail.com</a></p>
-      </section>
+      <button type="submit">Gửi liên hệ</button>
+      <p id="form-status"></p>
+    </form>
+    <p>Hoặc liên hệ qua Email: <a href="mailto:trungtran2005199@gmail.com">trungtran2005199@gmail.com</a></p>
+  </section>
+</main>
 
-    </main>
   </div>
 <script>
     const buttons = document.querySelectorAll('.tab-btn');
@@ -390,6 +582,15 @@ form button:hover {
     status.textContent = "✅ Đã mở ứng dụng email của bạn.";
     status.style.color = "green";
     });
+    function scrollSlider(sectionId, direction) {
+    const container = document.querySelector(`#${sectionId} .card-container`);
+    const scrollAmount = 240; // 1 card + khoảng cách
+
+    container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+    }
 </script>
 </body>
 </html>
