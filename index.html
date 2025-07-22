@@ -198,12 +198,20 @@
 
     /* RIGHT - CONTENT */
     .right-content {
-      flex: 1;
-      padding: 40px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* căn giữa ngang */
+    justify-content: center; /* căn giữa dọc */
+    padding: 40px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.15); /* nền trong suốt */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
     }
     body.dark .right-content {
     background-color: rgba(0, 0, 0, 0.15);
@@ -224,6 +232,51 @@
     body.dark .card-slider {
       background: #2a2a2a;
     }
+    /* CONTACT - CONTENT */
+    form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+}
+
+body.dark form input,
+body.dark form textarea {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #666;
+  color: #f1f1f1;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#form-status {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
   </style>
 </head>
 <body class="light">
@@ -235,6 +288,7 @@
         <img src="profile.jpg" class="avatar" alt="Avatar">
         <h2>Trần Minh Trung</h2>
         <p>Lập trình viên | Designer</p>
+        <p>Software Engineer</p>
       </div>
     </aside>
 
@@ -275,12 +329,26 @@
 
       <section class="card-slider" id="contact">
         <h2>📬 Contact</h2>
-        <p>Liên hệ qua GitHub: <a href="https://github.com/NAIHA199" target="_blank">NAIHA199</a></p>
+        <form id="contactForm">
+            <label for="name">Tên của bạn:</label>
+            <input type="text" id="name" name="name" required placeholder="Nhập tên của bạn">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="email@domain.com">
+
+            <label for="message">Tin nhắn:</label>
+            <textarea id="message" name="message" required placeholder="Viết tin nhắn..."></textarea>
+
+            <button type="submit">Gửi liên hệ</button>
+            <p id="form-status"></p>
+        </form>
+        <p>Hoặc liên hệ qua Email: <a href="#" target="_blank">trungtran2005199@gmail.com</a></p>
       </section>
+
     </main>
   </div>
 <script>
-  const buttons = document.querySelectorAll('.tab-btn');
+    const buttons = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('.card-slider');
     const themeToggle = document.getElementById('toggle-theme');
     const themeIcon = document.getElementById('theme-icon');
@@ -301,6 +369,26 @@
         btn.classList.add('active');
         document.getElementById(btn.dataset.tab).classList.add('active');
     });
+    });
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const message = this.message.value.trim();
+    const status = document.getElementById("form-status");
+
+    if (!name || !email || !message) {
+        status.textContent = "❗Vui lòng điền đầy đủ thông tin.";
+        status.style.color = "red";
+        return;
+    }
+
+    // Tạm thời dùng mailto, có thể thay bằng fetch() nếu dùng backend
+    const mailtoLink = `mailto:youremail@example.com?subject=Liên hệ từ ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail: ${email}`;
+    window.location.href = mailtoLink;
+
+    status.textContent = "✅ Đã mở ứng dụng email của bạn.";
+    status.style.color = "green";
     });
 </script>
 </body>
