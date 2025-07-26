@@ -8,412 +8,446 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-light: #f5f5f5;
-      --bg-dark: #1e1e1e;
-      --text-light: #333;
-      --text-dark: #f1f1f1;
-      --accent: #007BFF;
-    }
+  --bg-light: #f5f5f5;
+  --bg-dark: #1e1e1e;
+  --text-light: #222; /* Tăng tương phản so với #333 */
+  --text-dark: #f1f1f1;
+  --accent: #007BFF;
+  --error: #ff4d4d;
+  --success: #28a745;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      height: 100vh;
-      transition: background 0.3s, color 0.3s;
-      background: var(--bg-light);
-      color: var(--text-light);
-    }
-    body.light {
-    background-image: url(back.light.jpg);
-    color: #333; 
-    }
-    body.dark {
-    background-image: url(back.dark.jpg);
-    color: #f1f1f1;
-    }
-    body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    transition: background-image 0.5s ease-in-out;color: #333;  
-    }
-    
+body {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  background: var(--bg-light);
+  color: var(--text-light);
+}
 
-    .layout-container {
-      display: flex;
-      width: 100%;
-    }
+body.light {
+  background-image: url('back.light.jpg');
+  background-color: var(--bg-light); /* Fallback */
+  color: var(--text-light);
+}
 
-    /* LEFT - PROFILE */
-    .left-panel {
-      width: 30%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+body.dark {
+  background-image: url('back.dark.jpg');
+  background-color: var(--bg-dark); /* Fallback */
+  color: var(--text-dark);
+}
 
-    .profile-card {
-      background: #fff;
-      padding: 30px 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 280px;
-      transition: background 0.3s;
-    }
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease-in-out, color 0.3s;
+}
 
-    body.dark .profile-card {
-      background: #2f2f2f;
-    }
+.layout-container {
+  display: flex;
+  width: 100%;
+}
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--accent);
-      margin-bottom: 15px;
-    }
+/* LEFT - PROFILE */
+.left-panel {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    .profile-card h2 {
-      margin: 10px 0 5px;
-    }
+.profile-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  transition: background 0.3s;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .profile-card p {
-      font-size: 0.95rem;
-      color: gray;
-    }
-    /* Card chung */
-    .card-slider,
-    .profile-card {
-    background-color: rgba(255, 255, 255, 0.15); /* nền sáng trong suốt */
-    backdrop-filter: blur(10px); /* làm mờ background phía sau */
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    }
-    body.dark .card-slider,
-    body.dark .profile-card {
-    background-color: rgba(0, 0, 0, 0.2); /* nền tối trong suốt */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    /* Tăng kích thước card */
-    .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    width: 100%;
-    }
+body.dark .profile-card {
+  background: #2f2f2f;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .card-item {
-    width: 100%;
-    max-width: 260px;
-    height: 220px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-    justify-content: center;
-    }
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin-bottom: 15px;
+}
 
-    .card-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    }
+.profile-card h2 {
+  margin: 10px 0 5px;
+}
 
+.profile-card p {
+  font-size: 0.95rem;
+  color: #666; /* Tăng tương phản so với gray */
+}
 
-    .card-item p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: inherit;
-    }
+body.dark .profile-card p {
+  color: #ccc;
+}
 
-    body.dark .card-item img {
-    filter: brightness(0.9) contrast(1.1);
-    }
+/* MIDDLE - MENU */
+.middle-menu {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px 10px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
 
+body.dark .middle-menu {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+  justify-content: center;
+}
 
-    /* MIDDLE - MENU */
-    .middle-menu {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px; /* Bo góc đẹp */
-    padding: 20px 10px;
-    width: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
+.tab-btn {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 5px 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: inherit;
+  position: relative;
+}
 
+.tab-btn[aria-current="true"] {
+  background: rgba(0, 123, 255, 0.1);
+  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border-radius: 5px;
+}
 
-    .menu-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      flex-grow: 1;
-      justify-content: center;
-    }
+/* Theme Toggle */
+.theme-toggle {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  flex-direction: column;
+}
 
-    .tab-btn {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      border: none;
-      background: transparent;
-      font-size: 1rem;
-      padding: 5px 3px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: inherit;
-      position: relative;
-    }
+.theme-switch {
+  width: 40px;
+  height: 20px;
+  background: #999;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.3s;
+}
 
-    .tab-btn.active {
-      background: rgba(0, 123, 255, 0.1);
-      box-shadow: inset 2px 0 5px rgba(0,0,0,0.1);
-      font-weight: bold;
-      border-radius: 5px;
-    }
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
 
-    /* Toggle */
-    .theme-toggle {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      flex-direction: column;
-    }
+body.dark .theme-switch {
+  background: #555;
+}
 
-    .theme-switch {
-      width: 40px;
-      height: 20px;
-      background: #999;
-      border-radius: 10px;
-      position: relative;
-      transition: background 0.3s;
-    }
+body.dark .theme-switch::after {
+  transform: translateX(20px);
+}
 
-    .theme-switch::after {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      background: white;
-      border-radius: 50%;
-      top: 1px;
-      left: 1px;
-      transition: transform 0.3s;
-    }
-
-    body.dark .theme-switch {
-      background: #555;
-    }
-
-    body.dark .theme-switch::after {
-      transform: translateX(20px);
-    }
-
-    /* RIGHT - CONTENT */
-    .right-content {
+/* RIGHT - CONTENT */
+.right-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  overflow: hidden; /* ✅ không scroll */
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   margin: 40px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-    body.dark .right-content {
-    background-color: rgba(0, 0, 0, 0.15);
-    }
-    .card-slider {
-    display: none;
-    width: 100%;
-    padding: 0; /* vì .card-box đã có padding rồi */
-    background: transparent; /* ✅ bỏ nền */
-    backdrop-filter: none;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    }
+
+body.dark .right-content {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
 .section-title-box {
   font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
-  margin: 30px auto 35px auto; /* ⬅ Top: 30px, Bottom: 35px */
+  margin: 30px auto 35px auto;
   padding: 12px 24px;
   background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   color: var(--text-light);
   width: fit-content;
 }
 
-
 body.dark .section-title-box {
-  background-color: rgba(0,0,0,0.3);
-  border: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-dark);
 }
 
+/* CARD SLIDER */
+.card-slider {
+  display: none;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
 
-    .card-slider.active {
-    display: block;
-    }
+.card-slider.active {
+  display: block;
+}
 
-    body.dark .card-slider {
-    background: rgba(0,0,0,0.15);
-    }
-    /* CONTACT - CONTENT */
-    form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-    }
+body.dark .card-slider {
+  background: transparent; /* Bỏ lớp .card-box trong dark mode */
+}
 
-    form input,
-    form textarea {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: inherit;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    outline: none;
-    }
-
-    body.dark form input,
-    body.dark form textarea {
-    background: rgba(30, 30, 30, 0.8);
-    border: 1px solid #666;
-    color: #f1f1f1;
-    }
-
-    form button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-    }
-
-    form button:hover {
-    background-color: #0056b3;
-    }
-
-    #form-status {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    }
-    /*Card-slider*/
-    
-    .section-title {
-    margin-bottom: 20px;
-    text-align: center;
-    }
-
-    .card-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-items: center;
 }
+
 .card-box {
   padding: 30px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
 }
 
 body.dark .card-box {
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent; /* Bỏ lớp .card-box trong dark mode */
+  border: none;
+  box-shadow: none;
 }
 
+.card-item {
+  width: 100%;
+  max-width: 280px;
+  height: 230px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  justify-content: center;
+}
 
-    .card-item {
-        width: 100%;
-        max-width: 280px;
-        height: 230px;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(6px);
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        text-align: center;
-        justify-content: center;
-        }
-        .card-item img {
-    width: 130px;
-    height:130px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    }
-        .card-item:hover {
-    transform: translateY(-5px);
-    }
+.card-item img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
 
-    body.dark .card-item {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #f1f1f1;
-    }
+.card-item:hover {
+  transform: translateY(-5px);
+}
 
-    /* Responsive */
-    @media (max-width: 900px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    }
+body.dark .card-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+}
 
-    @media (max-width: 768px) {
+body.dark .card-item img {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+}
+
+form input:invalid,
+form textarea:invalid {
+  border-color: var(--error);
+  background: rgba(255, 100, 100, 0.1);
+}
+
+form input:valid,
+form textarea:valid {
+  border-color: var(--success);
+}
+
+body.dark form input,
+body.dark form textarea {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #666;
+  color: #f1f1f1;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#form-status {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: var(--error);
+}
+
+#form-status.success {
+  color: var(--success);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .middle-menu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    position: static;
+    transform: none;
+    border-radius: 10px;
+  }
+
+  .menu-buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    max-width: 200px;
+    padding: 20px 15px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .section-title-box {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+
+  .right-content {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .card-item {
+    max-width: 200px;
+    height: 180px;
+  }
+
+  .card-item img {
+    width: 100px;
+    height: 100px;
   }
 }
 
